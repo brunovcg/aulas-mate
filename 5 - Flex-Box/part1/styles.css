@@ -1,0 +1,145 @@
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+h2 {
+  color: green;
+  padding: 0;
+  margin: 0;
+}
+section {
+  border: 1px solid black;
+  max-width: 700px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.box {
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* table */
+.table th,
+table td {
+  width: 100px;
+  height: 100px;
+  border: 1px solid black;
+  text-align: center;
+}
+/* table */
+
+/* flex-direction */
+.flex-direction-gap-order {
+  gap: 10px 10px;
+  display: flex;
+  flex-direction: row;
+}
+
+.flex-direction-gap-order .box1 {
+  order: 0;
+}
+
+.flex-direction-gap-order .box2 {
+  order: 0;
+}
+
+/* flex-direction */
+
+/* flex-wrap */
+.flex-wrap {
+  gap: 10px 10px;
+  display: flex;
+  /* flex-wrap: wrap;
+  flex-direction: row; */
+  width: 500px;
+  flex-flow: row wrap;
+}
+/* flex-wrap */
+
+/* flex-content */
+
+.flex-content {
+  display: flex;
+  gap: 20px;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 400px;
+  height: 400px;
+  align-content: center;
+  justify-content: center;
+}
+/* flex-content */
+/* flex-items-content */
+.flex-items-content {
+  display: flex;
+  gap: 20px;
+  flex-direction: row;
+  width: 800px;
+  height: 300px;
+  align-items: center;
+  justify-content: center;
+}
+/* flex-items-content */
+/* flex-self */
+.flex-self {
+  display: flex;
+  gap: 20px;
+  flex-direction: row;
+  width: 800px;
+  height: 300px;
+  align-items: center;
+  justify-content: center;
+}
+
+.flex-self .box1 {
+  align-self: end;
+}
+/* flex-self */
+/* flex-grow */
+.flex-grow {
+  display: flex;
+  gap: 20px;
+  flex-direction: row;
+  width: 400px;
+}
+
+.flex-grow .box1 {
+  width: 30px;
+  flex-grow: 2;
+}
+
+.flex-grow .box2 {
+  width: 40px;
+  flex-grow: 1;
+}
+
+/* flex-grow */
+
+/* flex-shrink */
+.flex-shrink {
+  display: flex;
+  gap: 20px;
+  flex-direction: row;
+  width: 400px;
+}
+.flex-shrink .box1 {
+  width: 250px;
+  flex-shrink: 2;
+}
+
+.flex-shrink .box2 {
+  width: 250px;
+  flex-shrink: 1;
+}
+
+div {
+  flex: 1 1 100px;
+}
