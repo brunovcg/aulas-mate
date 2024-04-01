@@ -3,9 +3,56 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Sass</title>
+    <link rel="stylesheet" href="style.scss" />
   </head>
   <body>
-    <div id="my">x</div>
+    <main>
+      <h2>Sass VS. SCSS</h2>
+      <section style="display: flex; gap: 20px">
+        <div class="sass-example">SASS</div>
+        <div class="scss-example">SCSS</div>
+      </section>
+      <h2>Nesting</h2>
+      <section class="nesting">
+        <h3 class="nesting__title">Nesting Title</h3>
+        <p class="nesting__description">Nesting Description</p>
+        <ul class="nesting__list">
+          <li class="nesting__link">1</li>
+          <li class="nesting__link nesting__link--blue">2</li>
+          <li class="nesting__link">3</li>
+        </ul>
+      </section>
+      <h2>For loop</h2>
+      <section class="for-loops">
+        <div class="for-loops__box for-loops__box__through">
+          <h1 class="for-loops__heading">h1</h1>
+          <h2 class="for-loops__heading">h2</h2>
+          <h3 class="for-loops__heading">h3</h3>
+        </div>
+        <div class="for-loops__box for-loops__box__to">
+          <h1 class="for-loops__heading">h1</h1>
+          <h2 class="for-loops__heading">h2</h2>
+          <h3 class="for-loops__heading">h3</h3>
+        </div>
+      </section>
+      <h2>Each loop</h2>
+      <section class="each-loop">
+        <div class="each-loop__box each-loop__box--red">1</div>
+        <div class="each-loop__box each-loop__box--blue">2</div>
+        <div class="each-loop__box each-loop__box--green">3</div>
+      </section>
+      <h2>Function</h2>
+      <section class="function">
+        <div class="function__box--1">100px</div>
+        <div class="function__box--2">200px</div>
+        <div class="function__box--3">300px</div>
+      </section>
+      <h2>Mixin</h2>
+      <section class="mixin">
+        <div class="mixin__box--1">1</div>
+        <div class="mixin__box--2">2</div>
+      </section>
+    </main>
   </body>
 </html>

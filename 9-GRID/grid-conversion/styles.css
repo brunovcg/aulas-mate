@@ -1,0 +1,20 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.catalog__content {
+  margin: 0 auto;
+  border: 2px solid red;
+  max-width: 640px;
+  padding: 10px 10px;
+  gap: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 100px);
+  justify-content: center;
+}
+
+.catalog__item {
+  height: 150px;
+  background-color: yellowgreen;
+}

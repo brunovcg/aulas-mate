@@ -1,0 +1,167 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  height: 1600px;
+}
+h1 {
+  color: rgb(255, 132, 0);
+}
+
+p,
+h3 {
+  margin: 0;
+}
+
+hr {
+  border-top: 0.5px solid lightgray;
+  margin-block: 20px;
+}
+
+/* ! SCROLL - START */
+
+.scroll {
+  display: flex;
+  gap: 30px;
+  .box-1 {
+    width: 300px;
+    border: 2px solid red;
+    padding: 10px;
+    overflow-x: auto;
+    height: 290px;
+    transform: rotateX(180deg);
+    .box-1__text {
+      width: 301px;
+      transform: rotateX(180deg);
+    }
+  }
+
+  .box-2 {
+    width: 300px;
+    border: 2px solid blue;
+    padding: 10px;
+    overflow-y: auto;
+    height: 320px;
+    transform: rotateY(180deg);
+
+    .box-2__text {
+      transform: rotateY(180deg);
+    }
+  }
+}
+
+/* ! LOADING - START*/
+
+@keyframes rotate {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes rotateReverse {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.loading {
+  width: 220px;
+  height: 220px;
+  border: 1px solid grey;
+  position: relative;
+  .loading__small-gear {
+    width: 70px;
+    animation: rotate 4s infinite linear;
+    position: absolute;
+    top: 32px;
+    left: 40px;
+  }
+
+  .loading__big-gear {
+    width: 100px;
+    animation: rotateReverse 5s infinite linear;
+    position: absolute;
+    bottom: 32px;
+    right: 35px;
+  }
+}
+
+/* ! BLINK - START*/
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+.blink {
+  display: flex;
+  .blink__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+    .blink__small-gear {
+      width: 40px;
+      animation: rotateReverse 5s infinite linear;
+    }
+
+    .blink__text {
+      font-size: 20px;
+      color: grey;
+      animation: blink linear 4s infinite;
+    }
+  }
+}
+
+/* ! ACCORDION - START*/
+
+.accordion {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  border: 1px solid grey;
+  padding: 10px;
+  width: 400px;
+
+  .accordion__toggle {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-top: 10px;
+    margin-right: 10px;
+    cursor: pointer;
+  }
+
+  .accordion__toggle-label {
+    color: blue;
+    user-select: none;
+  }
+
+  .accordion__toggle-input {
+    display: none;
+  }
+
+  .accordion__text {
+    max-height: 0;
+    overflow: hidden;
+    background-color: lightgreen;
+    padding-left: 5px;
+    line-height: 1.5;
+    transition: max-height 1s;
+  }
+
+  .accordion__toggle:checked ~ .accordion__text {
+    max-height: 100px;
+    width: 100%;
+    overflow-y: auto;
+  }
+}

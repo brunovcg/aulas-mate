@@ -1,0 +1,149 @@
+.scss-example {
+  width: 200px;
+  height: 200px;
+  border: 1px solid blue;
+  color: blue;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+.nesting {
+  border: 1px solid gray;
+  display: flex;
+  flex-direction: column;
+
+  .nesting__title {
+    color: red;
+  }
+
+  .nesting__description {
+    color: green;
+  }
+
+  .nesting__list {
+    box-sizing: border-box;
+    display: flex;
+    gap: 40px;
+
+    // .nesting__link {
+    //   width: 30px;
+    // }
+
+    // .nesting__link-blue {
+    //   color: blue;
+    // }
+
+    // .nesting__link-blue:hover {
+    //   background-color: yellow;
+    //   cursor: pointer;
+    // }
+
+    .nesting__link {
+      width: 30px;
+
+      &--blue {
+        color: blue;
+      }
+
+      &:hover {
+        background-color: yellow;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+.for-loops {
+  border: 1px solid gray;
+
+  .for-loops__box {
+    display: flex;
+    width: 120px;
+
+    &__through {
+      @for $index from 1 through 3 {
+        h#{$index} {
+          font-size: $index * 10px;
+        }
+      }
+    }
+
+    &__to {
+      @for $index from 1 to 3 {
+        h#{$index} {
+          color: blue;
+        }
+      }
+    }
+  }
+}
+
+.each-loop {
+  border: 1px solid gray;
+  padding: 10px;
+  display: flex;
+  gap: 20px;
+  color: white;
+
+  $colors: red, blue, green;
+
+  .each-loop__box {
+    width: 100px;
+    height: 100px;
+    background-color: black;
+
+    @each $color in $colors {
+      &--#{$color} {
+        background-color: $color;
+      }
+    }
+  }
+}
+
+.function {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid gray;
+  padding: 20px;
+  gap: 10px;
+
+  @function getWidth($size) {
+    @return $size * 100px;
+  }
+
+  @for $index from 1 through 3 {
+    &__box--#{$index} {
+      height: 20px;
+      width: getWidth($index);
+      background-color: green;
+    }
+  }
+}
+
+@mixin backColor($width) {
+  width: $width * 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  color: white;
+}
+
+.mixin {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid gray;
+  padding: 20px;
+  gap: 10px;
+
+  &__box--1 {
+    @include backColor(1);
+    background-color: red;
+  }
+
+  &__box--2 {
+    @include backColor(2);
+    background-color: green;
+  }
+}
